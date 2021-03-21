@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Projekt_Android</string>
+    <string name="home">Home</string>
+    <string name="questionnaire">QUESTIONNAIRE</string>
+    <string name="questions">Questions</string>
+    <string name="savingsIdeas">SAVINGS IDEAS</string>
+    <string name="forum">Forum</string>
+    <string name="chat">CHAT</string>
+    <string name="myAccount">MY ACCOUNT</string>
+</resources>
