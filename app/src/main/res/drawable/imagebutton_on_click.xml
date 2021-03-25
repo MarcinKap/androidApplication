@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <solid android:color="@color/primary_blue"/>
+            <size android:height="60dp" android:width="60dp"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_menu_grey_24dp"
+        android:gravity="center"
+        >
+    </item>
+<!--    <item android:drawable="@drawable/ic_menu_white_24dp"/>-->
+</layer-list>

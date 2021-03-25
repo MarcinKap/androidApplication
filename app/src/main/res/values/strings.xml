@@ -7,4 +7,36 @@
     <string name="forum">Forum</string>
     <string name="chat">CHAT</string>
     <string name="myAccount">MY ACCOUNT</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="log_in">LOG IN</string>
+
+
+    <string name="open_drawer_menu">Open navigation drawer</string>
+    <string name="close_drawer_menu">Close navigation drawer</string>
+
+    <!-- Toast -->
+    <string name="wrong_pin">Wrong pin!</string>
+
+
+
+    <string name="if_you_have_a_question_write_to_us">Masz pytanie? Napisz!</string>
+    <string name="name">Twoje imię</string>
+    <string name="email">Email</string>
+    <string name="topic">Temat</string>
+    <string name="your_message">Twoja wiadomość</string>
+    <string name="send_message">Wyślij</string>
+    <string name="address">Adres</string>
+    <string name="phone_number">Numer telefonu</string>
+    <string name="email_for_contact">Email</string>
+
+    <string name="toast_question_sended">Wiadomość wysłana</string>
+    <string name="toast_fill_email">Uzupełnij pole email</string>
+    <string name="error_send_question">Wiadomość nie wysłana</string>
+    <string name="fill_topic">Wypełnij pole</string>
+    <string name="fill_message">Wypełnij pole</string>
+    <string name="fill_email">Wypełnij pole</string>
+    <string name="wrong_email">Zły email</string>
+    <string name="fil_name">Wypełnij pole</string>
+
+
 </resources>

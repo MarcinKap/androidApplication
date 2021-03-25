@@ -1,4 +1,4 @@
-package com.example.projekt_android.MenuViews.News;
+package com.example.projekt_android.MenuViews.NewsList;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,13 +15,14 @@ import com.example.projekt_android.Model.News;
 import com.example.projekt_android.R;
 
 import java.util.List;
-import java.util.Vector;
 
 public class NewsListFragment extends Fragment {
 
     private static final String mCode = "NewsFragment";
-    private List<News> newsVector;
+    private List<News> newsList;
     private RecyclerView.Adapter mAdapter;
+    private Context context;
+
 
 
 
@@ -31,9 +32,10 @@ public class NewsListFragment extends Fragment {
     }
 
 
-    public NewsListFragment(List<News> newsListFragment)
+    public NewsListFragment(List<News> newsListFragment, Context context)
     {
-        this.newsVector = newsListFragment;
+        this.newsList = newsListFragment;
+        this.context = context;
     }
 
     /**
@@ -81,7 +83,7 @@ public class NewsListFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setHasFixedSize(true);
-        mAdapter = new NewsAdapter(newsVector);
+        mAdapter = new NewsListAdapter(newsList , context );
         recyclerView.setAdapter(mAdapter);
 
         return rootView;

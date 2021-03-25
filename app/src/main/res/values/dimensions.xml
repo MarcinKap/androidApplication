@@ -21,11 +21,11 @@
 
 
     <!--    Stroke-->
-    <dimen name="stroke_thickness">2dp</dimen>
+    <dimen name="stroke_thickness">1dp</dimen>
     <dimen name="stroke_in_alarm">2dp</dimen>
 
     <!--    Margins-->
-    <dimen name="margin_alarm">22.67sp</dimen>
+    <dimen name="margin_alarm">17.67sp</dimen>
     <dimen name="margin_top">5sp</dimen>
     <dimen name="margin_bottom">5sp</dimen>
     <dimen name="margin_mobile">20sp</dimen>
