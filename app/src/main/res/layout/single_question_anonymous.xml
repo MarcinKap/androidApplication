@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/if_you_have_a_question_write_to_us"
+            android:id="@+id/savingsIdeaDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/if_you_have_a_question_write_to_us" />
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescription" />
 
         <EditText
             android:id="@+id/questionSenderEmail"

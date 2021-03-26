@@ -1,4 +1,4 @@
-package com.example.projekt_android.MenuViews.NewsList;
+package com.example.projekt_android.MenuViews.SavingsIdeasList;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,31 +10,33 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projekt_android.MenuViews.NewsList.NewsListAdapter;
 import com.example.projekt_android.MenuViews.WrapContentLinearLayoutManager;
 import com.example.projekt_android.Model.News;
+import com.example.projekt_android.Model.SavingsIdea;
 import com.example.projekt_android.R;
 
 import java.util.List;
 
-public class NewsListFragment extends Fragment {
+public class SavingsIdeasListFragment extends Fragment {
 
-    private static final String mCode = "NewsFragment";
-    private List<News> newsList;
+    private static final String mCode = "SavingsIdeaFragment";
+    private List<SavingsIdea> savingsIdeaList;
     private RecyclerView.Adapter mAdapter;
     private Context context;
 
 
 
 
-    public NewsListFragment()
+    public SavingsIdeasListFragment()
     {
         // Required empty public constructor
     }
 
 
-    public NewsListFragment(List<News> newsListFragment, Context context)
+    public SavingsIdeasListFragment(List<SavingsIdea> savingsIdeaList, Context context)
     {
-        this.newsList = newsListFragment;
+        this.savingsIdeaList = savingsIdeaList;
         this.context = context;
     }
 
@@ -69,15 +71,15 @@ public class NewsListFragment extends Fragment {
             return null;
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-
-        RecyclerView recyclerView = rootView.findViewById(R.id.newsRecyclerView);
+        View rootView = inflater.inflate(R.layout.fragment_savings_ideas_list, container, false);
+        RecyclerView recyclerView = rootView.findViewById(R.id.savingsIdeasRecyclerView);
+        System.out.println("recycler view");
 
         Context context = getContext();
 
         if(context != null)
         {
-                recyclerView.setLayoutManager(new WrapContentLinearLayoutManager(context));
+            recyclerView.setLayoutManager(new WrapContentLinearLayoutManager(context));
         }
         else
         {
@@ -87,7 +89,7 @@ public class NewsListFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         recyclerView.setHasFixedSize(true);
-        mAdapter = new NewsListAdapter(newsList , context );
+        mAdapter = new SavingsIdeasListAdapter(savingsIdeaList , context );
         recyclerView.setAdapter(mAdapter);
 
         return rootView;

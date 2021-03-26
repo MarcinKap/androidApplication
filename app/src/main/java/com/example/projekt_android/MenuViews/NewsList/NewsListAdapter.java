@@ -16,7 +16,6 @@ import com.example.projekt_android.MenuViews.News.NewsFragment;
 import com.example.projekt_android.Model.News;
 import com.example.projekt_android.R;
 import com.example.projekt_android.api.ApiUtils;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
-public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
+public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.SingleNewsViewHolder> {
 
     private List<News> newsList;
     private Context context;
@@ -38,15 +37,15 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
 
     @NonNull
     @Override
-    public NewsListAdapter.NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SingleNewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.single_news_for_news_list, parent,false);
 
-        return new NewsViewHolder(view);
+        return new SingleNewsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NewsListAdapter.NewsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SingleNewsViewHolder holder, int position) {
         News news = newsList.get(position);
 
         if (news==null){
@@ -69,22 +68,21 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
 //
 //    }
 
-    class NewsViewHolder extends RecyclerView.ViewHolder
+    class SingleNewsViewHolder extends RecyclerView.ViewHolder
     {
         private TextView newsLinkToMovie, newsShortText, newsCreationData;
         private Button readMoreButton;
-        private YouTubePlayerView youTubePlayerView;
-        private ReadNewsListener readNewsListener;
 
-        public NewsViewHolder(@NonNull View itemView)
+
+        public SingleNewsViewHolder(@NonNull View itemView)
         {
             super(itemView);
 
 
 
-            newsLinkToMovie = itemView.findViewById(R.id.if_you_have_a_question_write_to_us);
-            newsShortText = itemView.findViewById(R.id.newsText);
-            newsCreationData = itemView.findViewById(R.id.newsCreationData);
+            newsLinkToMovie = itemView.findViewById(R.id.savingsIdeaDescription);
+            newsShortText = itemView.findViewById(R.id.savingsIdeaDescriptionFromDatabase);
+            newsCreationData = itemView.findViewById(R.id.savingsIdeaCreationData);
 
             readMoreButton = itemView.findViewById(R.id.readMoreButton);
 
@@ -138,73 +136,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
 
         }
 
-        public class ReadNewsListener implements View.OnClickListener
-        {
 
-
-
-
-            @Override
-            public void onClick(View view) {
-
-
-
-
-            }
-        }
-
-
-
-
-
-
-
-
-//        public class CustomListener implements View.OnClickListener, View.OnLongClickListener
-//        {
-
-//            void updateMessage(AndroidAlarmMessage androidAlarmMessage)
-//            {
-//            }
-
-//            @Override
-//            public void onClick(View v)
-//            {
-//            }
-
-//            @Override
-//            public boolean onLongClick(View v)
-//            {
-//            }
-
-//        }
 
     }
 
 
-
-
-
-
-
-//
-//
-//    @NonNull
-//    @Override
-//    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        View view = this.inflater.inflate(R.layout.content, parent, false);
-//        return new ViewHolder(view);
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//        News news = newsList.get
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return 0;
-//    }
 
 
 

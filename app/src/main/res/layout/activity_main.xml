@@ -82,21 +82,21 @@
                         android:text="@string/questions" />
 
                     <Button
-                        android:id="@+id/drawer_heavy_items_btn"
+                        android:id="@+id/savingsIdeas_btn"
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/savingsIdeas" />
 
                     <Button
-                        android:id="@+id/drawer_messages_btn"
+                        android:id="@+id/forum_btn"
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/forum" />
 
                     <Button
-                        android:id="@+id/drawer_lines_btn"
+                        android:id="@+id/chat_btn"
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

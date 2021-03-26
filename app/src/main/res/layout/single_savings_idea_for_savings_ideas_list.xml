@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/savingsIdeaFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_alarm"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/news_card_view"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/savingsIdeaCreationData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Data"
+            android:textColor="@color/disabled_2nd"
+            android:textSize="@dimen/data_and_time_font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/savingsIdeaTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tytuł"
+            android:textColor="@color/font_navy_blue"
+            android:textSize="@dimen/alarm_name_font_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaCreationData" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/savingsIdeaContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaTitle">
+
+            <TextView
+                android:id="@+id/savingsIdeaNatureOfBenefit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Charakter"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaCategoryFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaNatureOfBenefitFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="charakter - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaNatureOfBenefit" />
+
+            <TextView
+                android:id="@+id/savingsIdeaCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Kategoria"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaProfitabilityFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaCategoryFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="kategoria - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaCategory" />
+
+            <TextView
+                android:id="@+id/savingsIdeaBenefits"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Korzyści"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescriptionFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaBenefitsFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="korzyści - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaBenefits" />
+
+            <TextView
+                android:id="@+id/savingsIdeaDescriptionFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="opis - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescription" />
+
+            <TextView
+                android:id="@+id/savingsIdeaDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Opis"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.842"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/savingsIdeaProfitability"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Opłacalność"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaBenefitsFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaProfitabilityFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Opłacalność - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaProfitability" />
+
+            <TextView
+                android:id="@+id/savingsIdeaWorkArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Obszar"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaNatureOfBenefitFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaWorkAreaFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="obszar - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaWorkArea" />
+
+            <TextView
+                android:id="@+id/savingsIdeaTypeOfCosts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Rodzaj kosztów"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaWorkAreaFromDatabase" />
+
+            <TextView
+                android:id="@+id/savingsIdeaTypeOfCostsFromDatabase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text="rodzaj kosztow - text"
+                android:textColor="@color/font_navy_blue"
+                android:textSize="@dimen/data_and_time_font_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/savingsIdeaTypeOfCosts" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/savingsIdeaAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="srednia ocen wynosi:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/savingsIdeaContraintWithStars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/savingsIdeaAverage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaContent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageView
+                android:id="@+id/savingsIdea1star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star_icon_unpressed" />
+
+            <ImageView
+                android:id="@+id/savingsIdea2star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/savingsIdea1star"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star_icon_unpressed" />
+
+            <ImageView
+                android:id="@+id/savingsIdea3star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/savingsIdea2star"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star_icon_unpressed" />
+
+            <ImageView
+                android:id="@+id/savingsIdea5star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/savingsIdea4star"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star_icon_unpressed" />
+
+            <ImageView
+                android:id="@+id/savingsIdea4star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/savingsIdea3star"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_star_icon_unpressed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

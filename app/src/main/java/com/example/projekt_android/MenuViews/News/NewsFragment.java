@@ -72,9 +72,9 @@ public class NewsFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.single_news, container, false);
 
-        newsTitle = rootView.findViewById(R.id.if_you_have_a_question_write_to_us);
-        newsDate = rootView.findViewById(R.id.newsCreationData);
-        newsText = rootView.findViewById(R.id.newsText);
+        newsTitle = rootView.findViewById(R.id.savingsIdeaDescription);
+        newsDate = rootView.findViewById(R.id.savingsIdeaCreationData);
+        newsText = rootView.findViewById(R.id.savingsIdeaDescriptionFromDatabase);
 
         newsTitle.setText(news.getTitle());
         newsDate.setText(news.getCreatedDate());

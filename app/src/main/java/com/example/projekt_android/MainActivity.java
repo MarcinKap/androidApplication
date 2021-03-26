@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import com.example.projekt_android.MenuViews.NewsList.NewsListFragment;
 import com.example.projekt_android.MenuViews.Question.QuestionFragment;
+import com.example.projekt_android.MenuViews.SavingsIdeasList.SavingsIdeasListFragment;
 import com.example.projekt_android.Model.News;
+import com.example.projekt_android.Model.SavingsIdea;
 import com.example.projekt_android.api.ApiUtils;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,22 +42,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_view);
         toolbar = findViewById(R.id.toolbar);
         pageTitle = findViewById(R.id.toolbar_selected_item_menu_drawer_txt);
 
-//        setSupportActionBar(toolbar);
-
         initNavigationDrawer();
         buttonsListeners();
         viewManagement(savedInstanceState);
-
-
-
-//        initControls();
-//        initListener();
     }
 
     private void viewManagement(Bundle savedInstanceState){
@@ -64,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
             if (mSelectedFragment != null) {
                 switch (mSelectedFragment) {
                     case "homePage":
-                        getNewsListAndSaveToRecyclerView();
+                        homePage_getNewsList();
                         pageTitle.setText(R.string.home);
                         break;
                     case "questions":
+                        questionPage();
                         pageTitle.setText(R.string.questions);
                         break;
                     case "savingsIdeas":
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else {
-            getNewsListAndSaveToRecyclerView();
+            homePage_getNewsList();
             pageTitle.setText(R.string.home);
         }
     }
@@ -114,54 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    // Wlaczanie recyxler view odpalający newsy
-    private void saveNewsToNewsFragment(List<News> newsList) {
-        if (newsList == null) {
-            System.out.println("lista jest null");
-            return;
-        }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container_fragment, new NewsListFragment(newsList, getApplicationContext()))
-                .commit();
-    }
-
-    // Zdobywanie listy news do home page
-    private void getNewsListAndSaveToRecyclerView() {
-        ApiUtils.getApiService().getNews()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new DisposableObserver<Response<List<News>>>() {
-                    @Override
-                    public void onNext(@NonNull Response<List<News>> response) {
-                        if (ApiUtils.getResponseStatusCode(response) == 200) {
-                            saveNewsToNewsFragment(response.body());
-                        }
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-                        Log.e("API_CALL", e.getMessage(), e);
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
-
-    private void questionPage(){
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container_fragment, new QuestionFragment(getApplicationContext()))
-                .commit();
-
-
-    }
-
-
-
     public void closeOrOpenNavigationDrawer(View view) {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -180,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 drawerLayout.closeDrawer(GravityCompat.START);
 
-                getNewsListAndSaveToRecyclerView();
-
+                homePage_getNewsList();
+                pageTitle.setText(R.string.home);
                 mSelectedFragment = "homePage";
 
             }
@@ -200,8 +147,108 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button savingsIdeasButton = findViewById(R.id.savingsIdeas_btn);
+        savingsIdeasButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+
+                savingsIdeasPage_getSavingsIdeasList();
+                pageTitle.setText(R.string.savingsIdeas);
+                mSelectedFragment = "savingsIdeas";
+
+            }
+        });
+
 
     }
+
+
+
+    // Zdobywanie listy news do home page
+    private void homePage_getNewsList() {
+        ApiUtils.getApiService().getNews()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableObserver<Response<List<News>>>() {
+                    @Override
+                    public void onNext(@NonNull Response<List<News>> response) {
+                        if (ApiUtils.getResponseStatusCode(response) == 200) {
+
+                            // włączanie fragmentu z newsami
+                            runNewsFragment(response.body());
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Log.e("API_CALL", e.getMessage(), e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    // Wlaczanie fragmentu z newsami
+    private void runNewsFragment(List<News> newsList) {
+        if (newsList == null) {
+            System.out.println("lista jest null");
+            return;
+        }
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container_fragment, new NewsListFragment(newsList, getApplicationContext()))
+                .commit();
+    }
+
+    private void questionPage(){
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container_fragment, new QuestionFragment(getApplicationContext()))
+                .commit();
+
+
+    }
+
+    private void savingsIdeasPage_getSavingsIdeasList() {
+        ApiUtils.getApiService().getSavingsIdeas()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new DisposableObserver<Response<List<SavingsIdea>>>() {
+                    @Override
+                    public void onNext(@NonNull Response<List<SavingsIdea>> response) {
+                        if (ApiUtils.getResponseStatusCode(response) == 200) {
+                            runSavingsIdeasFragment(response.body());
+                        }
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        Log.e("API_CALL", e.getMessage(), e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+    }
+
+    // Wlaczanie fragmentu z pomyslami
+    private void runSavingsIdeasFragment(List<SavingsIdea> savingsIdeaList) {
+        if (savingsIdeaList == null) {
+            System.out.println("lista jest null");
+            return;
+        }
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container_fragment, new SavingsIdeasListFragment(savingsIdeaList, getApplicationContext()))
+                .commit();
+    }
+
 
 
 

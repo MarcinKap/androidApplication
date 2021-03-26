@@ -1,6 +1,7 @@
 package com.example.projekt_android.api;
 
 import com.example.projekt_android.Model.News;
+import com.example.projekt_android.Model.SavingsIdea;
 
 import java.util.List;
 
@@ -29,5 +30,9 @@ public interface ApiService {
             @Query("senderEmail") String senderEmail,
             @Query("subject") String  topic,
             @Query("textMsg")  String textMsg);
+
+    @GET("/getSavingsIdeasRest")
+    Observable<Response<List<SavingsIdea>>> getSavingsIdeas();
+
 
 }

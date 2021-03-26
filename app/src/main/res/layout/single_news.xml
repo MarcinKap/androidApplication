@@ -8,10 +8,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/margin_alarm"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/news_card_view"
         android:paddingHorizontal="10dp"
         android:paddingVertical="4dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/newsText"
+            android:id="@+id/savingsIdeaDescriptionFromDatabase"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -34,10 +34,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/videoPlayer" />
+            app:layout_constraintTop_toBottomOf="@+id/videoPlayer"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/newsCreationData"
+            android:id="@+id/savingsIdeaCreationData"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Data"
@@ -45,10 +46,10 @@
             android:textSize="@dimen/data_and_time_font_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/if_you_have_a_question_write_to_us" />
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescription" />
 
         <TextView
-            android:id="@+id/if_you_have_a_question_write_to_us"
+            android:id="@+id/savingsIdeaDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Tytuł "
@@ -65,7 +66,7 @@
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsCreationData"
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaCreationData"
             app:showFullScreenButton="false"></com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

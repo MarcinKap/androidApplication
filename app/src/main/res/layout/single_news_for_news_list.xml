@@ -35,10 +35,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsText" />
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescriptionFromDatabase" />
 
         <TextView
-            android:id="@+id/newsText"
+            android:id="@+id/savingsIdeaDescriptionFromDatabase"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Short text"
@@ -46,10 +46,10 @@
             android:textSize="@dimen/data_and_time_font_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newsCreationData" />
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaCreationData" />
 
         <TextView
-            android:id="@+id/newsCreationData"
+            android:id="@+id/savingsIdeaCreationData"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Data"
@@ -57,10 +57,10 @@
             android:textSize="@dimen/data_and_time_font_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/if_you_have_a_question_write_to_us" />
+            app:layout_constraintTop_toBottomOf="@+id/savingsIdeaDescription" />
 
         <TextView
-            android:id="@+id/if_you_have_a_question_write_to_us"
+            android:id="@+id/savingsIdeaDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Tytuł "

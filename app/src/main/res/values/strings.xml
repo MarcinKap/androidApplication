@@ -37,6 +37,7 @@
     <string name="fill_email">Wypełnij pole</string>
     <string name="wrong_email">Zły email</string>
     <string name="fil_name">Wypełnij pole</string>
+    <string name="savingsIdeaAverage">Średnia ocen tego pomysłu to: </string>
 
 
 </resources>
