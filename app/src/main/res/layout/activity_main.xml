@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <include
-            layout="@layout/toolbar"
+            layout="@layout/toolbar_main_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF" />
@@ -42,7 +42,7 @@
             android:orientation="vertical">
 
             <include
-                layout="@layout/toolbar"
+                layout="@layout/toolbar_main_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left" />
@@ -93,6 +93,7 @@
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/disabled_2nd"
                         android:text="@string/forum" />
 
                     <Button
@@ -100,7 +101,15 @@
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/disabled_2nd"
                         android:text="@string/chat" />
+
+                    <Button
+                        android:id="@+id/drawer_my_account_button"
+                        style="@style/AppTheme.RoundedCornerMaterialButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/myAccount" />
 
                     <Button
                         android:id="@+id/drawer_log_out_button"
@@ -108,7 +117,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="50dp"
-                        android:text="@string/myAccount" />
+                        android:text="@string/log_out" />
+
+
                 </LinearLayout>
             </ScrollView>
 

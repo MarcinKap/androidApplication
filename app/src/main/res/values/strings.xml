@@ -38,6 +38,13 @@
     <string name="wrong_email">Zły email</string>
     <string name="fil_name">Wypełnij pole</string>
     <string name="savingsIdeaAverage">Średnia ocen tego pomysłu to: </string>
+    <string name="ratedSavingsIdea">"Średnia wartość ocen tego pomysłu to: "</string>
+    <string name="unratedSavingsIdea">Ten pomysł nie był jeszcze oceniony</string>
+    <string name="you_can_not_rate_this">Aby ocenić pomysł musisz być zalogowany</string>
+    <string name="logged_user_name">Imię</string>
+    <string name="logged_user_last_name">Nazwisko</string>
+    <string name="logged_user_email">Email</string>
+    <string name="last_name">nazwisko</string>
 
 
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/alarms_background"
-    tools:context=".MainActivity"
+    tools:context=".StartActivity"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <include
-            layout="@layout/toolbar"
+            layout="@layout/toolbar_start_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF" />
@@ -42,7 +42,7 @@
             android:orientation="vertical">
 
             <include
-                layout="@layout/toolbar"
+                layout="@layout/toolbar_start_activity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|left" />
@@ -85,10 +85,11 @@
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="@color/disabled_2nd"
                         android:text="@string/forum" />
 
                     <Button
-                        android:id="@+id/drawer_log_out_button"
+                        android:id="@+id/drawer_log_in_button"
                         style="@style/AppTheme.RoundedCornerMaterialButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
