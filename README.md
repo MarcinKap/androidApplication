@@ -1,4 +1,4 @@
-# androidApplication
+# Application for contacting the employee with the employer
 
 An application that connects to a server written in Java Spring.
 It is used to contact the employee with the employer.
